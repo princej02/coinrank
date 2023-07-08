@@ -3,7 +3,7 @@ import type { Metadata } from 'next'
 import { Poppins } from 'next/font/google'
 
 const poppins = Poppins({
-  weight: [],
+  weight: ['300', '400', '500', '700'],
   subsets: ['latin'],
   variable: '--font-poppins'
 })
