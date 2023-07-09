@@ -1,3 +1,3 @@
 export const strToNumArr = (strArr: string[]): number[] => {
-  return strArr.map(str => Number(str))
+  return strArr ? strArr.map(str => Number(str)) : [0]
 }

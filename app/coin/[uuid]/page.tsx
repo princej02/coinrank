@@ -1,7 +1,6 @@
 'use client'
 
 import useCoin from '@/app/lib/swr/useCoin'
-import Link from 'next/link'
 import { IoIosArrowForward } from 'react-icons/io'
 import { BiLink, BiLinkExternal } from 'react-icons/bi'
 import { formatCurrency } from '@/app/lib/formatCurrency'
@@ -11,13 +10,17 @@ import { strToNumArr } from '@/app/lib/strToNumArr'
 
 
 export default function Page({ params }: { params: { uuid: string } }) {
-  const { coin } = useCoin(params.uuid)
+  const { coin, isLoading, isError } = useCoin(params.uuid)
   const isChangeNeg = coin?.change[0] === '-'
+  console.log(coin)
+
   return (
     <div className='w-full font-font-poppins'>
       <div className="max-w-4xl mx-auto">
         <div className="flex items-center gap-2 mb-4 text-sm font-bold text-gray-500">
-          <Link href={`/`}>Coins</Link> <IoIosArrowForward /> <span className="text-black">{coin?.name}</span>
+          <a href="/">Coins</a> 
+          <IoIosArrowForward /> 
+          <span className="text-black">{coin?.name}</span>
         </div>
         <div className="container flex flex-col lg:flex-row justify-between gap-8">
           <div className="detail flex flex-col flex-1 gap-4">
@@ -33,7 +36,7 @@ export default function Page({ params }: { params: { uuid: string } }) {
               <span className="py-2 px-2 rounded-md bg-gray-500 text-white">coin</span>
               <span className="py-2 px-2 rounded-md bg-gray-500 text-white flex items-center gap-2">
                 <BiLink />
-                <Link href={coin?.websiteUrl!} target="_blank">{coin?.websiteUrl}</Link>
+                <a href={coin?.websiteUrl!} target="_blank">{coin?.websiteUrl}</a>
                 <BiLinkExternal />
               </span>
             </div>
