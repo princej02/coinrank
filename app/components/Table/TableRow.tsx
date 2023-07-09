@@ -1,3 +1,4 @@
+import { formatCurrency } from "@/app/lib/formatCurrency"
 import { Coin } from "@/types"
 import Image from "next/image"
 import Link from "next/link"
@@ -17,8 +18,8 @@ export default function TableRow({ coin, isLoading }: ITableRow) {
       </td>
       <td className="py-2 px-4">
         <div className="flex items-center gap-2">
-          <div>
-          <Image className="w-8 h-8" src={coin.iconUrl} alt={coin.name} />
+          <div className="w-8 h-8 relative">
+            <Image className="w-8 h-8" src={coin.iconUrl} alt={coin.name} fill/>
           </div>
           <Link href={`/coin/${coin.uuid}`}>
             <h3 className="font-semibold">{coin.name}</h3>
