@@ -1,20 +1,20 @@
-export type Coin = {
-  uuid: string;
-  symbol: string;
-  name: string;
-  color: string;
-  iconUrl: string;
-  marketCap: string;
-  price: string;
-  btcPrice: string;
-  listedAt: number;
-  change: string;
-  rank: number;
-  sparkline: string[];
-  lowVolume: boolean
-  coinrankingUrl: string;
-  "24hVolume": string;
-}
+// export type Coin = {
+//   uuid: string;
+//   symbol: string;
+//   name: string;
+//   color: string;
+//   iconUrl: string;
+//   marketCap: string;
+//   price: string;
+//   btcPrice: string;
+//   listedAt: number;
+//   change: string;
+//   rank: number;
+//   sparkline: string[];
+//   lowVolume: boolean
+//   coinrankingUrl: string;
+//   "24hVolume": string;
+// }
 
 export type GetCoinsResponse = {
   status: string;
@@ -55,7 +55,7 @@ type CoinNotice = {
   value: string;
 }
 
-type Coin = {
+export type Coin = {
   uuid: string;
   symbol: string;
   name: string;
@@ -65,7 +65,7 @@ type Coin = {
   websiteUrl: string;
   links: CoinLinks[];
   supply: CoinSupply;
-  volume24h: string;
+  "24hVolume": string;
   marketCap: string;
   fullyDilutedMarketCap: string;
   price: string;
