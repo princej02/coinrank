@@ -22,7 +22,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={poppins.className}>
-      <body className='relative w-full font-font-poppins '>
+      <body className='relative w-full min-h-full font-font-poppins '>
         <Header />
           {children}
         <Footer />

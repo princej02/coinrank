@@ -84,7 +84,7 @@ export type Coin = {
   tags: string[];
 }
 
-type GetCoinResponse = {
+export type GetCoinResponse = {
   status: string;
   data: {
     coin: Coin;
